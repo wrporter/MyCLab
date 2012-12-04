@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  points_avail: 
+  user_id: 
+  date: 2012-11-29 23:24:20
+
+two:
+  name: MyString
+  points_avail: 
+  user_id: 
+  date: 2012-11-29 23:24:20

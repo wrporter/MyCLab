@@ -1,0 +1,27 @@
+<h1> <%= @quiz.topic %> </h1>
+<%if @questions.blank? %>
+	<p> There are no questions for this quiz! </p>
+<% else %>
+	<ul id="questions">
+	<% @questions.each do |q| %>
+	    <li> 
+	    <%= q.question %>
+	    <b> <%= link_to "Edit" , {:controller => 'question', :action => 'edit_question', 
+	    	:id => q.id, :quiz_id => @quiz.id} %> </b>
+	    <b> <%= link_to "Delete", {:controller => 'question', :action => 'delete_question', 
+	    	:id => q.id, :quiz_id => @quiz.id}, :confirm => "Are you sure you want to delete this question?" %> </b> 
+	    
+	    <div>
+	    	Test rigth answer:   
+	  	<% @correct_answer = Answer.find(q.correct_answer_id) %>
+		<%= @correct_answer.answer %>
+	   </div>
+	    
+	    </li>
+	<% end %>
+	</ul>
+<% end %>
+
+<p> <%= link_to "Add New Question", { :controller => 'question', :action => 'new_question', :id => @quiz.id } %> </p>
+<%= link_to 'All Quizzes', {:action => 'quiz_list'} %>
+

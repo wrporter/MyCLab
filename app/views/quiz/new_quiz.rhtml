@@ -1,0 +1,7 @@
+<h1> Add new quiz </h1>
+<%= start_form_tag :action => 'create_quiz' %>
+<p><label for="quiz_topic">Topic</label>:
+<%= text_field 'quiz', 'topic' %> </p>
+<%= submit_tag "Create" %>
+<%= end_form_tag %>
+<%= link_to 'Back', {:action => 'quiz_list'} %>

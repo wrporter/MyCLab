@@ -1,0 +1,11 @@
+<% if @quizzes.blank? %>
+	<p> There are not any quizzes currently in the system. </p>
+<% else %>
+	<p> These are the current quizzes in the system </p>
+	<ul id="quizzes">
+	<% @quizzes.each do |q| %>
+		<li> <%= link_to q.topic, {:action => 'show_quiz', :id => q.id} -%> </li>
+	<% end %>
+	</ul>
+<% end %>
+<p> <%= link_to "Add new Quiz", {:action => 'new_quiz' } %> </p>

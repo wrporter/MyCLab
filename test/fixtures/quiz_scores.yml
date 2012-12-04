@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  score: 9.99
+  user_id: 1
+  test_id: 1
+
+two:
+  score: 9.99
+  user_id: 1
+  test_id: 1

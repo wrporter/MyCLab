@@ -1,0 +1,26 @@
+<h1> Add new question </h1>
+<%= form_for @question, :url => { :action => "create_question", :id => @quiz_id}  do |f|%>
+		<%= f.label "Question: " %>
+        <%= f.text_area :question, :cols => 40, :rows => 10%>
+	    <br/>	
+		<%= fields_for :answer do |fa| %>
+			<%= fa.label "Correct Answer: " %>
+			<%= fa.text_field  :answer%>
+		<% end %>
+		<br/>
+		<%= fields_for :wrong_answer1 do |fwa1| %>
+			<%= fwa1.label "Wrong Answer 1: " %>
+			<%= fwa1.text_field  :answer%>
+		<% end %>
+		<br/>
+		<%= fields_for :wrong_answer2 do |fwa2| %>
+			<%= fwa2.label "Wrong Answer 2: " %>
+			<%= fwa2.text_field  :answer%>
+		<% end %>	
+		<br/>
+		<%= fields_for :wrong_answer3 do |fwa3| %>
+			<%= fwa3.label "Wrong Answer 3: " %>
+			<%= fwa3.text_field  :answer%>
+		<% end %>	
+	<%= f.submit "Create" %>
+<% end %>
